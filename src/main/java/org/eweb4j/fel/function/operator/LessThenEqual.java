@@ -11,7 +11,7 @@ public class LessThenEqual extends LessThen {
 
 	/**
 	 * 小于等于
-	 * @see com.greenpineyu.fel.function.operator.RelationalOperator#compare(java.lang.Object,
+	 * @see org.eweb4j.fel.function.operator.RelationalOperator#compare(java.lang.Object,
 	 *      java.lang.Object)
 	 */
 	@SuppressWarnings({

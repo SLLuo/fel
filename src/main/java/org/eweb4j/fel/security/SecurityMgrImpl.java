@@ -18,7 +18,7 @@ public class SecurityMgrImpl implements SecurityMgr {
 	 * 判断原则，以可访问方法列表为首要依据（包含目标方法表示允许访问，否则不允许），不可访问方法列表为次要依据
 	 * 当允许访问方法列表为空时，以不可访问方法列表为依据。
 	 * 
-	 * @see com.greenpineyu.fel.security.ReflectMgr#isCallable(java.lang.reflect.Method)
+	 * @see org.eweb4j.fel.security.ReflectMgr#isCallable(java.lang.reflect.Method)
 	 */
 	
 	public boolean isCallable(Method m) {

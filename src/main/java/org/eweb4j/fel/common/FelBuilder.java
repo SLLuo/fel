@@ -20,8 +20,8 @@ public class FelBuilder {
 		disables.add(Process.class.getCanonicalName() + ".*");
 		disables.add(File.class.getCanonicalName() + ".*");
 		disables.add("java.net.*");
-		disables.add("com.greenpineyu.fel.compile.*");
-		disables.add("com.greenpineyu.fel.security.*");
+		disables.add("org.eweb4j.fel.compile.*");
+		disables.add("org.eweb4j.fel.security.*");
 		return new RegexSecurityMgr(null, disables);
 	}
 

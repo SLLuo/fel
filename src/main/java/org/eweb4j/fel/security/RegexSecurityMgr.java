@@ -107,7 +107,7 @@ public class RegexSecurityMgr implements SecurityMgr {
 	 *允许通过方法中包含参数方法，则允许访问。
 	 *不允许通过方法中包含参数方法，则不允许访问。
 	 *如果同时包含，则返回不允许通过方法的测试结果。 
-	 * @see com.greenpineyu.fel.security.ReflectMgr#isCallable(java.lang.reflect.Method)
+	 * @see org.eweb4j.fel.security.ReflectMgr#isCallable(java.lang.reflect.Method)
 	 */
 	
 	public boolean isCallable(Method m) {

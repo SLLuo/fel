@@ -18,7 +18,6 @@
 
 	<properties>
 		<java.version>1.7</java.version>
-		<hadoop.version>2.6.0-cdh5.12.2</hadoop.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	

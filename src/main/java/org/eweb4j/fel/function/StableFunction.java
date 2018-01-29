@@ -9,7 +9,7 @@ public abstract class StableFunction implements Function, Stable {
 	 * 
 	 * 当函数的参数相同时，多次执行函数，返回值都相同表示此函数是稳定的
 	 * 
-	 * @see com.greenpineyu.fel.parser.Optimizable#stable()
+	 * @see org.eweb4j.fel.parser.Optimizable#stable()
 	 */
 	
 	public boolean stable() {

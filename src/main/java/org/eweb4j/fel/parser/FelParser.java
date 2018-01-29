@@ -1,7 +1,7 @@
 // $ANTLR 3.4 E:\\workspace\\Fel\\Fel.g 2012-11-12 09:00:06
 
 package org.eweb4j.fel.parser;
-//import com.greenpineyu.fel.exception.ParseException;
+//import org.eweb4j.fel.exception.ParseException;
 import java.util.HashMap;
 
 import org.antlr.runtime.BitSet;
