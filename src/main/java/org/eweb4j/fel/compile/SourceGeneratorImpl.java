@@ -54,13 +54,13 @@ public class SourceGeneratorImpl implements SourceGenerator {
 		InputStream in = SourceGeneratorImpl.class
 				.getResourceAsStream("/java.template");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-		String line = null;
+		String line;
 		try {
 			while ((line = reader.readLine()) != null) {
 				sb.append(line).append("\r\n");
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 		template = sb.toString();
 	}

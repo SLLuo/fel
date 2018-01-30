@@ -32,7 +32,7 @@ public class FileClassLoader extends ClassLoader {
 			}
 			data = baos.toByteArray();
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}finally{
 			if(fis!= null){
 				try {

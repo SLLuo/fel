@@ -116,14 +116,9 @@ public class Dot implements Function {
 	public static Object invoke(Object obj, Method method, Object[] args) {
 		try {
 			return method.invoke(obj, args);
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			throw new RuntimeException(method.toGenericString() + ",args:" + args.length, e);
 		}
-		return null;
 	}
 
 	
@@ -203,8 +198,8 @@ public class Dot implements Function {
 	 * 获取参数代码
 	 * 
 	 * @param paramType 方法声明的参数类型
-	 * @param paramValueType 参数值的类型
-	 * @param paramMethod
+	 * @param node 参数值的类型
+	 * @param ctx
 	 * @return
 	 */
 	public static String getParamCode(Class<?> paramType, FelNode node, FelContext ctx) {

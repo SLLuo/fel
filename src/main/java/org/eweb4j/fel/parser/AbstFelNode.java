@@ -126,7 +126,7 @@ public abstract class AbstFelNode extends CommonTree implements FelNode, Interpr
 						FelNode child = iterator.next();
 						getNodes(child, returnMe, filter);
 					} catch (Exception e) {
-						e.printStackTrace();
+						throw new RuntimeException(e);
 					}
 				}
 			}

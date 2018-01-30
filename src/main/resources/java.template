@@ -3,10 +3,8 @@ package org.eweb4j.fel.compile;
 import org.eweb4j.fel.common.*;
 import org.eweb4j.fel.Expression;
 import org.eweb4j.fel.context.*;
-//import org.apache.commons.lang3.ObjectUtils;
-//import org.apache.commons.lang3.StringUtils;
 
-public class ${classname}  implements Expression{
+public class ${classname} implements Expression{
     ${attrs}
     public Object eval(FelContext context) {
         ${localVars}

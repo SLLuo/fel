@@ -138,19 +138,14 @@ public abstract class AbstCompiler implements FelCompiler {
 		try {
 			compile = this.compileToClass(src);
 			return compile.newInstance();
-		} catch (ClassNotFoundException e1) {
-			e1.printStackTrace();
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			throw new RuntimeException(e);
 		}finally{
 			String className = src.getName();
 			String pack = src.getPackageName();
 			String srcPackageDir = getSrcPackageDir(pack);
 			clean(srcPackageDir,getClassPackageDir(pack),className);
 		}
-		return null;
 	}
 
 

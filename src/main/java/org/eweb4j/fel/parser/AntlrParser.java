@@ -58,17 +58,17 @@ public class AntlrParser implements Parser {
 			return null;
 		}
 		ByteArrayInputStream is = new ByteArrayInputStream(exp.getBytes());
-		ANTLRInputStream input = null;
+		ANTLRInputStream input;
 		try {
 			input = new ANTLRInputStream(is);
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 		FelLexer lexer = new FelLexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		FelParser parser = new FelParser(tokens);
 		parser.setTreeAdaptor(new NodeAdaptor());
-		ParserRuleReturnScope r = null;
+		ParserRuleReturnScope r;
 		try {
 			r = parser.program();
 		} catch (RecognitionException e) {

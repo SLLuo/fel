@@ -22,10 +22,11 @@ public class SecurityMgrImpl implements SecurityMgr {
 	 */
 	
 	public boolean isCallable(Method m) {
-		if (callableSet.isEmpty()) {
-			return !uncallableSet.contains(m);
-		}
-		return callableSet.contains(m);
+		return true;
+//		if (callableSet.isEmpty()) {
+//			return !uncallableSet.contains(m);
+//		}
+//		return callableSet.contains(m);
 	}
 	 /* 
 

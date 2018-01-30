@@ -53,6 +53,9 @@ public class ConstNode extends AbstFelNode {
 		if (value == null) {
 			return "null";
 		}
+		if (value instanceof Long) {
+			return "" + value + "L";
+		}
 		if (value instanceof String) {
 			return "\"" + value + "\"";
 		}

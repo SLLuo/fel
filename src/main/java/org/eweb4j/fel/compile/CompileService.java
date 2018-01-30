@@ -49,11 +49,11 @@ public class CompileService {
 					paths.add(url.getFile());
 				}
 			} else {
-				Enumeration<URL> resources = null;
+				Enumeration<URL> resources;
 				try {
 					resources = cl.getResources("/");
 				} catch (IOException e) {
-					e.printStackTrace();
+					throw new RuntimeException(e);
 				}
 				if (resources != null) {
 					while (resources.hasMoreElements()) {
@@ -73,25 +73,21 @@ public class CompileService {
 			@SuppressWarnings("unchecked")
 			Class<FelCompiler> cls = (Class<FelCompiler>) Class.forName(name);
 			comp = cls.newInstance();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			throw new RuntimeException(e);
 		} finally {
 		}
 		return comp;
 	}
 
 	private String getCompilerClassName() {
-		String version = System.getProperty("java.version");
+//		String version = System.getProperty("java.version");
 		String compileClassName = FelCompiler.class.getName();
-		if (version != null && version.startsWith("1.5")) {
-			compileClassName += "15";
-		} else {
+//		if (version != null && version.startsWith("1.5")) {
+//			compileClassName += "15";
+//		} else {
 			compileClassName += "16";
-		}
+//		}
 		return compileClassName;
 	}
 	
@@ -106,9 +102,8 @@ public class CompileService {
 			// System.out.println("****************\n" + src.getSource());
 			return complier.compile(src);
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
-		return null;
 	}
 	
 	public static void main(String[] args) {

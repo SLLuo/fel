@@ -7,9 +7,9 @@ public interface FelCompiler {
 	/**
 	 * 
 	 * 编译代码，并创建Expression
-	 * @param expr
+	 * @param src
 	 * @return
 	 */
-	public Expression compile(JavaSource src);
+	Expression compile(JavaSource src);
 
 }

@@ -39,9 +39,9 @@ public class Dollar implements Function {
 			try {
 				o = cls.newInstance();
 			} catch (InstantiationException e) {
-				e.printStackTrace();
+				throw new RuntimeException(e);
 			} catch (IllegalAccessException e) {
-				e.printStackTrace();
+				throw new RuntimeException(e);
 			}
 		}
 		return o;
@@ -68,9 +68,8 @@ public class Dollar implements Function {
 			Class<?> clz = Class.forName(className);
 			return clz;
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
-		return null;
 	}
 
 	private boolean isNew(String txt) {

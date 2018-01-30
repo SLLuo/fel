@@ -59,7 +59,7 @@ public class FelCompiler16<T> implements FelCompiler {
 		try {
 			fileManager.setLocation(StandardLocation.CLASS_PATH, cpFiles);
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 
 		/*
@@ -118,12 +118,9 @@ public class FelCompiler16<T> implements FelCompiler {
 		Class<T> compile = compileToClass(src);
 		try {
 			return (Expression) compile.newInstance();
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			throw new RuntimeException(e);
 		}
-		return null;
 	}
 
 
@@ -146,9 +143,8 @@ public class FelCompiler16<T> implements FelCompiler {
 		try {
 			return loadClass(src.getName());
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
-		return null;
 	}
 
 	@SuppressWarnings("unchecked")
