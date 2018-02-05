@@ -3,10 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.eweb4j</groupId>
 	<artifactId>fel</artifactId>
-	<version>0.8</version>
+	<version>1.0.0</version>
 	
 	<name>fel</name>
-	<url>http://code.google.com/p/fast-el/</url>
+	<url>https://github.com/SLLuo/fel/</url>
 	<description>Fast Expression Language</description>
 
 	<licenses>
